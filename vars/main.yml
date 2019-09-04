@@ -2,7 +2,6 @@
 ip_address: 10.154.38.238
 netmask: 255.255.255.0
 gateway: 10.154.38.1
-createvm: yes
 environments:
   DEV:
     vc_host: dcdpmgt002.dev.sutterhealth.org
@@ -20,3 +19,5 @@ environments:
     vc_net: Dev|Dev|EPG_1902
     vc_datastore: DCD-103-DSC-01
     vc_outfl: /L/Liptrap-Test/QA
+createvm: yes
+ramsize: "{{ mem * 1024 }}"
