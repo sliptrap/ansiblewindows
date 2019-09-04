@@ -16,7 +16,7 @@
     datastore: "{{ environments[app_env]['vc_datastore'] }}"
     hardware:
       num_cpus: "{{ cpus }}"
-      memory_mb: "{{ (mem*1024)|int }}"
+      memory_mb: "{{ mem|int *1024 }}"
     networks:
       - name: "{{ environments[app_env]['vc_net'] }}"
     folder: "{{ environments[app_env]['vc_outfl'] }}"
