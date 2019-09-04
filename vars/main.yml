@@ -20,4 +20,3 @@ environments:
     vc_datastore: DCD-103-DSC-01
     vc_outfl: /L/Liptrap-Test/QA
 createvm: yes
-ramsize: "{{ mem * 1024 }}"
