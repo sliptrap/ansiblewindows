@@ -1,26 +1,22 @@
 ---
-- name: Create Windows VM
-  hosts: localhost
-  user: root
-  become_method: sudo
-#  serial: 50
-  gather_facts: no
-
-  vars_files: 
-    - vars/main.yml
-   
-  tasks:
-    - import_tasks: createvm.yml
-      when: createvm is defined
- 
-    - name: Tower CLI add host
-      tower_host:
-        tower_host: 127.0.0.1
-        tower_username: '{{tower_user}}'
-        tower_password: '{{tower_password}}'
-        validate_certs: no
-        inventory: 'Provisioned Hosts'
-        name: '{{inventory_hostname}}'
-        variables: 
-          ansible_user: "root"
-          ansible_host: "{{ip_address}}"
+ip_address: 10.154.38.238
+netmask: 255.255.255.0
+gateway: 10.154.38.1
+createvm: yes
+environments:
+  dev:
+    vc_host: dcdpmgt002.dev.sutterhealth.org
+    vc_tmpl: TMPSHELL
+    vc_dc: SURDCDEV
+    vc_clus: DCD-102-GEN
+    vc_net: Dev|Dev|EPG_1905
+    vc_datastore: DCD-102-DSC-01
+    vc_outfl: /L/Liptrap-Test/DEV
+  qa:
+    vc_host: dcdpmgt002.dev.sutterhealth.org
+    vc_tmpl: TMPSHELL
+    vc_dc: SURDCDEV
+    vc_clus: DCD-103-GEN
+    vc_net: Dev|Dev|EPG_1902
+    vc_datastore: DCD-103-DSC-01
+    vc_outfl: /L/Liptrap-Test/QA
