@@ -13,6 +13,7 @@
     template: "TMPSHELL"
     datacenter: "SURDCDEV"
     cluster: "{{ environments[app_env]['vc_clus'] }}"
+    datastore: "{{ environments[app_env]['vc_datastore'] }}"
     hardware:
       num_cpus: "{{ cpus }}"
       memory_mb: "{{ mem * 1024  }}"
