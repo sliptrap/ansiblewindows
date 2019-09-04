@@ -5,7 +5,7 @@
 - name: Clone VM
 #  connection: local
   vmware_guest:
-    hostname: "environments[app_env]['vc_host']"
+    hostname: "{{ environments[app_env]['vc_host'] }}"
     username: "{{ vc_user }}"
     password: "{{ vc_pass }}"
     validate_certs: false
