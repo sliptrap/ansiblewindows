@@ -4,7 +4,7 @@ netmask: 255.255.255.0
 gateway: 10.154.38.1
 createvm: yes
 environments:
-  dev:
+  DEV:
     vc_host: dcdpmgt002.dev.sutterhealth.org
     vc_tmpl: TMPSHELL
     vc_dc: SURDCDEV
@@ -12,7 +12,7 @@ environments:
     vc_net: Dev|Dev|EPG_1905
     vc_datastore: DCD-102-DSC-01
     vc_outfl: /L/Liptrap-Test/DEV
-  qa:
+  QA:
     vc_host: dcdpmgt002.dev.sutterhealth.org
     vc_tmpl: TMPSHELL
     vc_dc: SURDCDEV
