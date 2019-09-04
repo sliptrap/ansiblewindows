@@ -5,39 +5,26 @@
 - name: Clone VM
 #  connection: local
   vmware_guest:
-    hostname: "dcdpmgt002.dev.sutterhealth.org"
+    hostname: "environments[app_env]['vc_host']"
     username: "{{ vc_user }}"
     password: "{{ vc_pass }}"
     validate_certs: false
     name: "{{ inventory_hostname }}"
-    template: "template_rhel76"
+    template: "TMPSHELL"
     datacenter: "SURDCDEV"
-    cluster: "{{ vc_clus }}"
+    cluster: "{{ environments[app_env]['vc_clus'] }}"
     hardware:
-      num_cpus: "{{ cpus | default('1') }}"
-      memory_mb: "{{ mem | default('2')  }}"
+      num_cpus: "{{ cpus }}"
+      memory_mb: "{{ mem * 1024  }}"
     networks:
-      - name: "{{ vc_net }}"
+      - name: "{{ environments[app_env]['vc_net'] }}"
         ip: "{{ ip_address }}"
         netmask: "255.255.255.0"
         gateway: "{{ gateway }}"
-    folder: "{{ vc_outfl }}"
-    annotation: "Created by {{ deploy_engnr }}"
+    folder: "{{ environments[app_env]['vc_outfl'] }}"
     state: poweredon
     wait_for_ip_address: yes
   register: machine
-
-- name: Customize VM Disks
-#  connection: local
-  vmware_guest:
-    hostname: "dcdpmgt002.dev.sutterhealth.org"
-    username: "{{ vc_user }}"
-    password: "{{ vc_pass }}"
-    validate_certs: false
-    name: "{{ inventory_hostname }}"
-    disk:
-      - size_gb: "{{ osdisk | default('80')  }}"
-        type: thin
 
 - name: Add host to inventory
   connection: local
