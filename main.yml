@@ -3,7 +3,6 @@
   hosts: localhost
   user: root
   become_method: sudo
-#  serial: 50
   gather_facts: no
 
   vars_files: 

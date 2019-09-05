@@ -3,7 +3,6 @@
     file: vars/main.yml
 
 - name: Clone VM
-#  connection: local
   vmware_guest:
     hostname: "{{ environments[app_env]['vc_host'] }}"
     username: "{{ vc_user }}"
