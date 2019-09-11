@@ -1,0 +1,11 @@
+---
+win_version:
+  WIN2012:
+    vc_tmpl: TMPSHELL
+    ad_ou: OU=Standard,OU=Windows 2012,OU=GPO,OU=Servers,DC=root,DC=sutterhealth,DC=org
+  WIN2016:
+    vc_tmpl: TMPSHELL
+    ad_ou: OU=Standard,OU=Windows 2016,OU=GPO,OU=Servers,DC=root,DC=sutterhealth,DC=org
+  WIN2019:
+    vc_tmpl: TMPSHELL
+    ad_ou: OU=Standard,OU=Windows 2019,OU=GPO,OU=Servers,DC=root,DC=sutterhealth,DC=org

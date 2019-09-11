@@ -7,6 +7,8 @@
 
   vars_files: 
     - vars/main.yml
+    - vars/data_vmware.yml
+    - vars/data_windows.yml
    
   tasks:
     - import_tasks: createvm.yml
