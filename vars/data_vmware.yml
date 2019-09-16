@@ -23,4 +23,4 @@ environments:
     vc_clus: DCD-102-GEN
     vc_net: Dev|Dev|EPG_1905
     vc_datastore: DCD-102-DSC-01
-    vc_outfl: /L/Liptrap-Test/DEV
+    vc_outfl: /L/Liptrap-Test/Prod
